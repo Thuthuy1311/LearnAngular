@@ -6,14 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public name = 'Thủy';
-  public age = 20;
+  public name = 'Thu Thủy';
+  public age = 17;
+  public vihicles = ['Toyato', 'Yamaha', 'Honda'];
   constructor() { }
   
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
-
+  public tangtuoi(){
+    this.age++;
+}
   
 
 }
