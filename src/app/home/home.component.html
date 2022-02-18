@@ -5,10 +5,10 @@
 <h3 class="myname">Nguyễn Thị Thu Thủy</h3>
 
 <!-- *ngIf -->
-<span *ngIf = "age < 18">Bạn dưới 18 tuổi</span>
+<!-- <span *ngIf = "age < 18">Bạn dưới 18 tuổi</span>
 <br>
 <span *ngIf = "age >= 18">Bạn trên 18 tuổi</span>
-<br><br>
+<br><br> -->
 
 <!-- ngModel -->
 <!-- <input [(ngModel)]="name"/>
@@ -61,15 +61,15 @@
 <!-- <input [(ngModel)]="name"/>
 <br>
 <br> -->
-<button (click)=" tangtuoi() ">Tăng tuổi</button>
+<button (click)="tangtuoi()">Tăng tuổi</button>
 <br>
 <br>
 <br>
-<span *ngIf="age < 18; then condition1; else condition2">
+<span *ngIf="age < 18; then truecondition; else falsecondition">
 </span>
-<ng-template #condition1 class = 'underAge'>Bạn dưới 18 tuổi</ng-template>
+<ng-template #truecondition class = 'underAge' ><span appBold>Bạn dưới 18 tuổi</span></ng-template>
 <br>
-<ng-template #condition2 class = 'overAge'>Bạn trên 18 tuổi, bạn đã đủ tuổi</ng-template>
+<ng-template #falsecondition class = 'overAge'>Bạn trên 18 tuổi, bạn đã đủ tuổi</ng-template>
 <br><br>
 
 <!-- ngModel -->

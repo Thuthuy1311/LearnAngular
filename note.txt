@@ -28,3 +28,10 @@
                decinal -->
     number
     slice
+
+3. Derectives: chỉ thị 
+compondent Derectives: thành phần 
+Structural Derectives: câu trúc
+
+
+Attribute Derectives : thược tính

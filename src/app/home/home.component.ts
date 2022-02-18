@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   public tangtuoi(){
     this.common.age++;
     this.age = this.common.age;
-}
+  }
   
 
 }
