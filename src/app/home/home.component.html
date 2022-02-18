@@ -1,8 +1,8 @@
-<p>home works!</p>
 <h2>Chào bạn {{name}}</h2>
+<!-- <h2>Chào bạn {{name | uppercase}}</h2> -->
 <h2>Bạn đã được {{age}} tuổi</h2>
+<!-- <h2>Bạn đã được {{age | number: "0.3" | currency}} tuổi</h2> -->
 <h3 class="myname">Nguyễn Thị Thu Thủy</h3>
-<strong>Hello</strong>
 
 <!-- *ngIf -->
 <span *ngIf = "age < 18">Bạn dưới 18 tuổi</span>
@@ -11,13 +11,13 @@
 <br><br>
 
 <!-- ngModel -->
-<input [(ngModel)]="name"/>
+<!-- <input [(ngModel)]="name"/>
 <br>
 <br>
 <button (click)=" tangtuoi() ">Tăng tuổi</button>
-<br>
+<br> -->
 <!-- *ngFor -->
-Danh sách xe :
+<!-- Danh sách xe :
 <div *ngFor = "let vihicle of vihicles">
     <li>{{vihicle}}</li>
 </div>
@@ -30,7 +30,7 @@ Danh sách xe :
     </select>
 </div>
 
-<!-- Event biddings -->
+<! Event biddings -->
 <!-- 
     click
     dbclick
@@ -53,15 +53,14 @@ Danh sách xe :
 <!-- ng-template -->
 
 <!-- *ngIf -->
-<span *ngIf = "age < 18">Bạn dưới 18 tuổi</span>
+<!-- <span *ngIf = "age < 18">Bạn dưới 18 tuổi</span>
 <br>
 <span *ngIf = "age >= 18">Bạn trên 18 tuổi</span>
-<br><br>
-
+<br><br> --> 
 <!-- ngModel -->
-<input [(ngModel)]="name"/>
+<!-- <input [(ngModel)]="name"/>
 <br>
-<br>
+<br> -->
 <button (click)=" tangtuoi() ">Tăng tuổi</button>
 <br>
 <br>
@@ -74,6 +73,12 @@ Danh sách xe :
 <br><br>
 
 <!-- ngModel -->
-<br>
+<!-- <br>
 <button (click)=" tangtuoi() ">Tăng tuổi</button>
-<br>
+<br> -->
+
+
+<!-- pipe -->
+<span>{{vihicles | json}}</span>
+
+<!-- Routing - Thiết lập đường dẫn giữa các trang -->

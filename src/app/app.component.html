@@ -1,1 +1,8 @@
-<app-home></app-home>
+<!-- <app-home></app-home> -->
+<!-- <app-about></app-about>
+ -->
+<a [routerLink]="['/home']" routerLinkActive="router-link-active">Đi tới home</a>
+&nbsp;|
+<a [routerLink]="['/about']" routerLinkActive="router-link-active">Đi tới about</a>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,30 @@
+1. !-- Event biddings -->
+<!-- 
+    click
+    dbclick
+    submit
+    blur
+    focus
+    scroll
+    cut
+    copy
+    paste
+    keyup
+    keypress
+    keydown
+    mouseup
+    mousedown
+    mouseenter
+
+ -->
+2. pipe
+ built-in pipes available
+    lowercase
+    uppercase
+    date
+    currency
+    json
+    peccent
+               decinal -->
+    number
+    slice

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../Services/common.service';
 
 @Component({
   selector: 'app-home',
@@ -7,15 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   public name = 'Thu Thủy';
-  public age = 17;
+  public age = 18;
   public vihicles = ['Toyato', 'Yamaha', 'Honda'];
-  constructor() { }
+  constructor(private common: CommonService) { 
+    this.age = common.age;
+  }
   
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
   public tangtuoi(){
-    this.age++;
+    this.common.age++;
+    this.age = this.common.age;
 }
   
 
