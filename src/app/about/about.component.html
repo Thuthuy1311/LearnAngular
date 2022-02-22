@@ -3,4 +3,8 @@
 <span> Hello about works</span>
 <h2 appBold>Bạn đã được {{age}} tuổi</h2>
 <button (click)=" tangtuoi() ">Tăng tuổi</button>
-
+<br>
+Comments: <br>
+<span>{{comments | json}}</span>
+<br>
+<span>{{comments?.[0] | json}}</span>
