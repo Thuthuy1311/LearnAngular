@@ -8,3 +8,11 @@ Comments: <br>
 <span>{{comments | json}}</span>
 <br>
 <span>{{comments?.[0] | json}}</span>
+<br>
+Posts: <br>
+<div *ngFor = "let post of posts">
+    <li>{{post | json}}</li>
+</div>
+<br>
+<p>Bạn có <strong class="postcss">{{posts?.length}}</strong> tin nhắn</p>
+<button (click) = "addPost()">Thêm post mới</button>

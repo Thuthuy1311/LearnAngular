@@ -21,18 +21,32 @@ export class ServerHttpService {
   constructor(private httpClient: HttpClient) { }
 
   public getProfile(): Observable<any> {
-    const url = `${this, this.REST_API_SERVER}/profile`;
+    const url = `${ this.REST_API_SERVER}/profile`;
     return this.httpClient
       .get<any>(url, this.httpOptions)
       .pipe(catchError(this.handleError))
   }
 
   public getComments(): Observable<any> {
-    const url = `${this, this.REST_API_SERVER}/comments`;
+    const url = `${this.REST_API_SERVER}/comments`;
     return this.httpClient
       .get<any>(url, this.httpOptions)
       .pipe(catchError(this.handleError))
   }
+  public getPosts() {
+    const url = `${ this.REST_API_SERVER}/posts`;
+    return this.httpClient
+      .get<any>(url, this.httpOptions)
+      .pipe(catchError(this.handleError))
+  }
+  public addPosts(data: any){
+    const url = `${this.REST_API_SERVER}/posts`;
+    return this.httpClient
+      .post<any>(url, data, this.httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
+
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.

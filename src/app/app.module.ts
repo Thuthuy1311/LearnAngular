@@ -13,6 +13,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { BoldDirective } from './Directives/bold.directive';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { FormComponent } from './form/form.component';
+import { DemoComponent } from './demo/demo.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormComponent } from './form/form.component';
     PageNotFoundComponent,
     BoldDirective,
     ReactiveFormComponent,
-    FormComponent
+    FormComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,
