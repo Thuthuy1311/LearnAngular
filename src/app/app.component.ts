@@ -9,7 +9,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 })
 export class AppComponent {
   title = 'FirstProject';
-  @ViewChild('sidenav') sidenav: MatSidenav;
+  @ViewChild('sidenav') sidenav?: MatSidenav;
   public isOpened = false;
   
   constructor (){
@@ -20,7 +20,7 @@ export class AppComponent {
    */
   public openLeftSide(): void {
     this.isOpened = !this.isOpened;
-    this.sidenav.toggle();
+    this.sidenav?.toggle();
   }
   /**
    * closeLeftSide

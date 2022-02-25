@@ -13,10 +13,10 @@ export class HomeComponent implements OnInit {
   constructor(private common: CommonService) { 
     this.age = common.age;
   }
-  
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
   }
+  
   public tangtuoi(){
     this.common.age++;
     this.age = this.common.age;
