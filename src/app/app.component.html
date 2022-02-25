@@ -1,7 +1,78 @@
 <!-- <app-home></app-home> -->
 <!-- <app-about></app-about>
  -->
-<a [routerLink]="['/home']" routerLinkActive="router-link-active">Đi tới home</a>
+<mat-toolbar color="primary" class="nav-height">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+            <mat-icon (click)="openLeftSide()">menu</mat-icon>
+        </button>
+        <h1>Quản lý học sinh</h1>
+        <span class="menu-spacer" style="width:100px"></span>
+        <div>
+            <a mat-button [routerLink]="['/home']" routerLinkActive="router-link-active">
+                <mat-icon>Home</mat-icon>
+                home</a>
+            &nbsp;|
+            <a mat-button [routerLink]="['/about']" routerLinkActive="router-link-active">
+                <mat-icon>account_circle</mat-icon>
+                Đi tới about</a>
+            &nbsp;|
+            <a mat-button [routerLink]="['/form']" routerLinkActive="router-link-active">
+                <mat-icon>filter_name</mat-icon>
+                 Form</a>
+            &nbsp;|
+            <a mat-button [routerLink]="['/reactiveform']" routerLinkActive="router-link-active">
+                <mat-icon>folder_shared</mat-icon>
+                Reactive form</a>
+            &nbsp; |
+            <a mat-button [routerLink]="['/reactiveform']" routerLinkActive="router-link-active">
+                <mat-icon>close</mat-icon>
+                Close</a>
+            <!-- <a mat-button [routerLink]="['/demo']" routerLinkActive="router-link-active">Đi tới Demo form</a> -->
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav (cloded) = "closeLeftSide()">
+        <mat-nav-list>
+            <a mat-list-item [routerLink]="['/home']" routerLinkActive="router-link-active">
+                <mat-icon>Home</mat-icon>
+                home</a>
+            &nbsp;|
+            <a mat-list-item [routerLink]="['/about']" routerLinkActive="router-link-active">
+                <mat-icon>account_circle</mat-icon>
+                Đi tới about</a>
+            &nbsp;|
+            <a mat-list-item [routerLink]="['/form']" routerLinkActive="router-link-active">
+                <mat-icon>filter_name</mat-icon>
+                 Form</a>
+            &nbsp;|
+            <a mat-list-item [routerLink]="['/reactiveform']" routerLinkActive="router-link-active">
+                <mat-icon>folder_shared</mat-icon>
+                Reactive form</a>
+            &nbsp; |
+            <a mat-list-item (click) = "sidenav.toggle()" mat-list-item>
+                <mat-icon>close</mat-icon>
+                Close</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="
+        height: 90vh;
+        margin:20px 10px 0 10px;
+        "
+        [ngClass] ="{
+            'content-move-left': !isOpened,
+            'content-move-right': isOpened
+        }"
+        >
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+<!-- <a [routerLink]="['/home']" routerLinkActive="router-link-active">Đi tới home</a>
 &nbsp;|
 <a [routerLink]="['/about']" routerLinkActive="router-link-active">Đi tới about</a>
 &nbsp;|
@@ -10,4 +81,4 @@
 <a [routerLink]="['/reactiveform']" routerLinkActive="router-link-active">Đi tới Reactive form</a>
 &nbsp; |
 <a [routerLink]="['/demo']" routerLinkActive="router-link-active">Đi tới Demo form</a>
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
