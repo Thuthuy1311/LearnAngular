@@ -1,4 +1,31 @@
 {
+  "students":[
+    {
+      "id" : 1,
+      "code": "MSV-01",
+      "gender": "Female",
+      "firstName": "Thủy",
+      "lastName": "Nguyễn",
+      "dob": "2001/01/16",
+      "email": "thuthuyxh1311@gmail.com",
+      "phone": "038-231-9028",
+      "piicture": ""
+
+    },
+    {
+      "id" : 2,
+      "code": "MSV-02",
+      "gender": "Male",
+      "firstName": "Phúc",
+      "lastName": "Võ",
+      "dob": "2001/07/18",
+      "email": "phucpro746@gmail.com",
+      "phone": "0988406734",
+      "piicture": ""
+
+    }
+  ],
+
   "posts": [
     {
       "id": 1,

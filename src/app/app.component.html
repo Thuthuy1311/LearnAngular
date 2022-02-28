@@ -1,7 +1,86 @@
 <!-- <app-home></app-home> -->
 <!-- <app-about></app-about>
  -->
-<mat-toolbar  color = "white" class="nav-height">
+ <mat-toolbar color="primary" class="nav-height">
+    <mat-toolbar-row style="background: #1f1fbf;">
+      <button mat-icon-button>
+        <mat-icon (click)="openLeftSide()">menu</mat-icon>
+      </button>
+      <h1>Quản lý sinh viên</h1>
+      <span class="menu-spacer" style="width: 100px;"></span>
+      <div>
+        <a
+          mat-button
+          [routerLink]="['/dashboard']"
+          [routerLinkActive]="'active-link'"
+        >
+          <mat-icon mat-list-icon>home</mat-icon> Bảng điều khiển
+        </a>
+        <a
+          mat-button
+          [routerLink]="['/students']"
+          [routerLinkActive]="'active-link'"
+        >
+          <mat-icon>folder_shared</mat-icon>
+          <!-- <span
+             *ngIf="totalStudents > 0"
+            matBadge="{{ totalStudents }}"
+            matBadgeColor="warn"
+            matBadgeSize="small"
+          >
+            Sinh Viên &nbsp;
+          </span> -->
+          <span>Sinh Viên &nbsp;</span>
+        </a>
+        <a
+          mat-button
+          [routerLink]="['/about']"
+          [routerLinkActive]="'active-link'"
+        >
+          <mat-icon>person</mat-icon> Vài Nét
+        </a>
+      </div>
+    </mat-toolbar-row>
+    <!-- <mat-toolbar-row>
+      <span style="font-size: 12px;"
+        >Simple helps you easily manage your contacts</span
+      >
+    </mat-toolbar-row> -->
+  </mat-toolbar>
+  <mat-sidenav-container style="top: 40px">
+    <mat-sidenav #sidenav (closed)="closeLeftSide()">
+      <mat-nav-list>
+        <a mat-list-item [routerLink]="['/dashboard']">
+          <mat-icon mat-list-icon>home</mat-icon> Bảng điều khiển
+        </a>
+        <a mat-list-item [routerLink]="['/students']">
+          <mat-icon>folder_shared</mat-icon> Học Sinh
+        </a>
+        <a mat-list-item [routerLink]="['/about']">
+          <mat-icon>person</mat-icon> Vài Nét
+        </a>
+        <a mat-list-item (click)="sidenav.toggle()" mat-list-item>
+          <mat-icon>close</mat-icon> Đóng
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content style="top: 40px">
+      <div
+        style="
+          height: 90vh;
+          margin-top: 20px;
+          margin-right: 10px;
+          margin-left: 10px;
+        "
+        [ngClass]="{
+          'content-move-left': !isOpened,
+          'content-move-right': isOpened
+        }"
+      >
+        <router-outlet></router-outlet>
+      </div>
+
+<!-- <mat-toolbar  color = "white" class="nav-height">
     <mat-toolbar-row style="background: #1f1fbf;">
         <button mat-icon-button>
             <mat-icon (click)="openLeftSide()">menu</mat-icon>
@@ -11,42 +90,48 @@
         <div>
             <a mat-button [routerLink]="['/home']" routerLinkActive="router-link-active">
                 <mat-icon mat-list-icon>home</mat-icon>
-                Home</a>
-            <a mat-button [routerLink]="['/form']" routerLinkActive="router-link-active">
+                Bảng điều khiển</a>
+             <a mat-button [routerLink]="['/form']" routerLinkActive="router-link-active">
                 <mat-icon>filter_name</mat-icon>
                  Form</a>
             <a mat-button [routerLink]="['/reactiveform']" routerLinkActive="router-link-active">
                 <mat-icon>folder_shared</mat-icon>
-                Reactive form</a>
+                Reactive form</a> -->
+            <!-- <a mat-button [routerLink]="['/student']" routerLinkActive="router-link-active">
+            <mat-icon>folder_shared</mat-icon>
+            Học sinh</a>
             <a mat-button [routerLink]="['/about']" routerLinkActive="router-link-active">
                 <mat-icon>person</mat-icon>
-                About</a>
+                Vài nét</a>
            
-            <!-- <a mat-button [routerLink]="['/demo']" routerLinkActive="router-link-active">Đi tới Demo form</a> -->
-        </div>
+            <a mat-button [routerLink]="['/demo']" routerLinkActive="router-link-active">Đi tới Demo form</a> -->
+        <!-- </div>
     </mat-toolbar-row>
-</mat-toolbar>
-<mat-sidenav-container>
+</mat-toolbar> -->
+<!-- <mat-sidenav-container>
     <mat-sidenav #sidenav (cloded) = "closeLeftSide()">
         <mat-nav-list>
             <a mat-list-item [routerLink]="['/home']">
                 <mat-icon>home</mat-icon>
-                Home</a>
-            <a mat-list-item [routerLink]="['/form']">
+                Bảng điều khiển</a> -->
+            <!-- <a mat-list-item [routerLink]="['/form']">
                 <mat-icon>filter_name</mat-icon>
                  Form</a>
             <a mat-list-item [routerLink]="['/reactiveform']">
                 <mat-icon>folder_shared</mat-icon>
-                Reactive form</a>
+                Reactive form</a> -->
+            <!-- <a mat-list-item [routerLink]="['/reactiveform']">
+                <mat-icon>folder_shared</mat-icon>
+                Học sinh</a>
             <a mat-list-item [routerLink]="['/about']">
                 <mat-icon>person</mat-icon>
-                About</a>
+                Vài nét</a>
             <a mat-list-item (click) = "sidenav.toggle()" mat-list-item>
                 <mat-icon>close</mat-icon>
                 Close</a>
         </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content style="top:40px">
         <div style="
         height: 90vh;
         margin:20px 10px 0 10px;
@@ -60,7 +145,7 @@
     </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
-
+ -->
 
 
 <!-- <a [routerLink]="['/home']" routerLinkActive="router-link-active">Đi tới home</a>

@@ -24,6 +24,8 @@ import { BoldDirective } from './Directives/bold.directive';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { FormComponent } from './form/form.component';
 import { DemoComponent } from './demo/demo.component';
+import { StudentsComponent } from './students/students.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { DemoComponent } from './demo/demo.component';
     BoldDirective,
     ReactiveFormComponent,
     FormComponent,
-    DemoComponent
+    DemoComponent,
+    StudentsComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

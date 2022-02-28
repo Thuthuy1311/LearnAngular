@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { catchError, Observable } from 'rxjs';
 import { throwError } from 'rxjs/internal/observable/throwError';
+import { Student } from '../models/Student';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,18 @@ export class ServerHttpService {
     const url = `${ this.REST_API_SERVER}/profile`;
     return this.httpClient
       .get<any>(url, this.httpOptions)
+      .pipe(catchError(this.handleError))
+  }
+  public getStudents(): Observable<any> {
+    const url = `${ this.REST_API_SERVER}/students`;
+    return this.httpClient
+      .get<any>(url, this.httpOptions)
+      .pipe(catchError(this.handleError))
+  }
+  public addStudent(data: Student){
+    const url = `${ this.REST_API_SERVER}/students`;
+    return this.httpClient
+      .post<any>(url,data, this.httpOptions)
       .pipe(catchError(this.handleError))
   }
 

@@ -20,35 +20,35 @@ export class AboutComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.serverHttp.getProfile()
-      .subscribe((data) => {
-        console.log('profile', data);
-        this.name = data.name;
-        this.age = data.age;
-      });
+  //   this.serverHttp.getProfile()
+  //     .subscribe((data) => {
+  //       console.log('profile', data);
+  //       this.name = data.name;
+  //       this.age = data.age;
+  //     });
     
-      this.serverHttp.getComments()
-      .subscribe((data) => {
-        console.log('comments', data);
-        this.comments = data
-      });
+  //     this.serverHttp.getComments()
+  //     .subscribe((data) => {
+  //       console.log('comments', data);
+  //       this.comments = data
+  //     });
 
-      this.serverHttp.getPosts()
-      .subscribe((data) => {
-        console.log('posts', data);
-        this.posts = data;
-      });
+  //     this.serverHttp.getPosts()
+  //     .subscribe((data) => {
+  //       console.log('posts', data);
+  //       this.posts = data;
+  //     });
       
   }
-  public addPost(){
-    const newData = {title: 'testing', author: 'author testing'};
-    this.serverHttp.addPosts(newData).subscribe((data) =>{
-      console.log('addPost', data);
-      this.posts.push(data);
-    });
-  }
-  public tangtuoi(){
-    this.common.age++;
-    this.age = this.common.age;
-  }
+  // public addPost(){
+  //   const newData = {title: 'testing', author: 'author testing'};
+  //   this.serverHttp.addPosts(newData).subscribe((data) =>{
+  //     console.log('addPost', data);
+  //     this.posts.push(data);
+  //   });
+  // }
+  // public tangtuoi(){
+  //   this.common.age++;
+  //   this.age = this.common.age;
+  // }
 }
